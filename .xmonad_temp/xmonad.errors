@@ -1,0 +1,61 @@
+$ ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -dynamic -v0 -outputdir /home/alspidy/.xmonad/build-x86_64-linux -o /home/alspidy/.xmonad/xmonad-x86_64-linux
+
+xmonad.hs:215:14: error:
+    • Ambiguous type variable ‘a0’ arising from a use of ‘smartBorders’
+      prevents the constraint ‘(LayoutModifier
+                                  (XMonad.Layout.Decoration.Decoration
+                                     TabbedDecoration XMonad.Layout.Decoration.DefaultShrinker)
+                                  a0)’ from being solved.
+      Relevant bindings include
+        Main.magnify :: ModifiedLayout
+                          Rename
+                          (ModifiedLayout
+                             SmartBorder
+                             (ModifiedLayout
+                                WindowNavigation
+                                (ModifiedLayout
+                                   (XMonad.Layout.Decoration.Decoration
+                                      TabbedDecoration XMonad.Layout.Decoration.DefaultShrinker)
+                                   (ModifiedLayout
+                                      (Sublayout (ModifiedLayout SmartBorder Simplest))
+                                      (ModifiedLayout
+                                         Magnifier
+                                         (ModifiedLayout
+                                            XMonad.Layout.LimitWindows.LimitWindows
+                                            (ModifiedLayout Spacing ResizableTall)))))))
+                          a0
+          (bound at xmonad.hs:214:1)
+      Probable fix: use a type annotation to specify what ‘a0’ should be.
+      These potential instance exist:
+        one instance involving out-of-scope types
+        (use -fprint-potential-instances to see them all)
+    • In the second argument of ‘($)’, namely
+        ‘smartBorders
+           $ windowNavigation
+               $ addTabs shrinkText myTabTheme
+                   $ subLayout [] (smartBorders Simplest)
+                       $ magnifier
+                           $ limitWindows 12
+                               $ mySpacing 8 $ ResizableTall 1 (3 / 100) (1 / 2) []’
+      In the expression:
+        renamed [Replace "magnify"]
+          $ smartBorders
+              $ windowNavigation
+                  $ addTabs shrinkText myTabTheme
+                      $ subLayout [] (smartBorders Simplest)
+                          $ magnifier
+                              $ limitWindows 12
+                                  $ mySpacing 8 $ ResizableTall 1 (3 / 100) (1 / 2) []
+      In an equation for ‘Main.magnify’:
+          Main.magnify
+            = renamed [Replace "magnify"]
+                $ smartBorders
+                    $ windowNavigation
+                        $ addTabs shrinkText myTabTheme
+                            $ subLayout [] (smartBorders Simplest)
+                                $ magnifier
+                                    $ limitWindows 12
+                                        $ mySpacing 8 $ ResizableTall 1 (3 / 100) (1 / 2) []
+    |
+215 |            $ smartBorders
+    |              ^^^^^^^^^^^^...
