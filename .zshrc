@@ -174,7 +174,9 @@ alias yaysyu='yay -Syu --noconfirm'              # update standard pkgs and AUR 
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 alias pacinstall='sudo pacman -S'                # install packages
+alias yayinstall='yay -S'                # install packages
 alias pacuninstall='sudo pacman -Rs'             # uninstall packages
+alias yayuninstall='yay -Rs'             # uninstall packages
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -200,6 +202,10 @@ alias free='free -m'                      # show sizes in MB
 # alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'          # music player
 # alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'  # another music player
 
+### RANDOM COLOR SCRIPT ###
+# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
+# Or install it from the Arch User Repository: shell-color-scripts
+colorscript random
 
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
