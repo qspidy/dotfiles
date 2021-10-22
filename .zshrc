@@ -223,7 +223,8 @@ colorscript random
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
 
-
+# set to VI Mode
+# set -o vi
 
 
 
