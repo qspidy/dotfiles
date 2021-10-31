@@ -132,7 +132,7 @@ export all_proxy=http://127.0.0.1:8889
 ### Uncomment only one of these!
 
 ### "bat" as manpager
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 ### PATH
 if [ -d "$HOME/.bin" ] ;
@@ -168,8 +168,14 @@ fi
  
 ### ALIASES ###
 
-# vim
+# vim and emacs
 alias vim="nvim"
+alias em="/usr/bin/emacs -nw"
+alias emacs="emacsclient -c -a 'emacs'"
+# alias doomsync="~/.emacs.d/bin/doom sync"
+# alias doomdoctor="~/.emacs.d/bin/doom doctor"
+# alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+# alias doompurge="~/.emacs.d/bin/doom purge"
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -226,6 +232,10 @@ eval "$(starship init zsh)"
 # set to VI Mode
 # set -o vi
 
+### DOOM-EMACS ###
+if [ -d "$HOME/.emacs.d/bin" ] ;
+  then PATH="$HOME/.emacs.d/bin:$PATH"
+fi   
 
 
 
