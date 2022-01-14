@@ -113,8 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 #     _    _ ____        _     _       
 #    / \  | / ___| _ __ (_) __| |_   _ 
-#   / _ \ | \___ \| '_ \| |/ _` | | | |  Albert Zhao
-#  / ___ \| |___) | |_) | | (_| | |_| |  https://github.com/Albert-Fig/
+#   / _ \ | \___ \| '_ \| |/ _` | | | |  Orange
+#  / ___ \| |___) | |_) | | (_| | |_| |  https://github.com/qspidy/
 # /_/   \_\_|____/| .__/|_|\__,_|\__, |
 #                 |_|            |___/ 
 # My zsh config. Not much to see here; just some pretty standard stuff.
