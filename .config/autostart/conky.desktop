@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=conky
-Type=Application
-Exec=/usr/bin/conky -c ~/.config/conky/al-v1.conkyrc
-Terminal=false
