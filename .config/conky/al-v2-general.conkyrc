@@ -106,7 +106,6 @@ ${voffset 0}${goto 12}${color3}Home: ${alignr}${fs_free /home/alspidy} / ${fs_si
 ${color2}${goto 12}${fs_bar 4 /home/alspidy}
 ${voffset 14}${goto 12}${color3}Network wlan0  ${hr 2}
 ${offset 5}${color1}Ext IP Addr${alignr}${exec curl ipinfo.io/ip}
-${offset 5}${color1}Ext Country${alignr}${exec curl ipinfo.io/country}
 ${offset 5}${color1}IPv4 Addr${alignr}${addr wlan0}
 ${voffset 14}${goto 12}${color3}Fortune  ${hr 2}
 ${color1}${execi 600 fortune -s | fold -s -w44}
@@ -138,3 +137,5 @@ ${voffset 14}${goto 12}${color3}UPTIME: ${uptime}  ${hr 2}
 
 --${offset 5}${color1}Ext City${alignr}${exec curl ipinfo.io/city}
 --${offset 5}${color1}Ext Region${alignr}${exec curl ipinfo.io/region}
+--${offset 5}${color1}Ext Country${alignr}${exec curl ipinfo.io/country}
+
