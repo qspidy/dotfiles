@@ -8,7 +8,7 @@ conky.config = {
 
 	--Various settings
 	background = true, 							-- forked to background
-	cpu_avg_samples = 6,						-- The number of samples to average for CPU monitoring.
+	cpu_avg_samples = 12,						-- The number of samples to average for CPU monitoring.
 	diskio_avg_samples = 10,					-- The number of samples to average for disk I/O monitoring.
 	double_buffer = true,						-- Use the Xdbe extension? (eliminates flicker)
 	if_up_strictness = 'address',				-- how strict if testing interface is up - up, link or address
@@ -87,7 +87,7 @@ conky.config = {
 conky.text = [[
 ${alignc}${color0}${font Ubuntu:size=30}${time %H:%M}${font}
 ${voffset 6}${alignc}${color0}${font Ubuntu:size=14}${time %b %d, %Y}${font}${color}
-${voffset 18}${goto 12}${color3}CPU${goto 50}$cpu%  ${acpitemp}°C  ${hr 2}
+${voffset 18}${goto 12}${color3}CPU${goto 50}$cpu%  ${exec sensors | grep "Package id 0" | cut -d "+" -f2 | cut -c1-2}°C  ${hr 2}
 ${color2}${goto 12}${cpubar 8,254}
 ${voffset 5}${goto 12}$font${color1}${top name 1}$alignr$color${top cpu 1}%
 ${goto 12}${color1}${top name 2}$alignr$color${top cpu 2}%
@@ -108,7 +108,7 @@ ${voffset 14}${goto 12}${color3}Network wlan0  ${hr 2}
 ${offset 5}${color1}Ext IP Addr${alignr}${exec curl ipinfo.io/ip}
 ${offset 5}${color1}IPv4 Addr${alignr}${addr wlan0}
 ${voffset 14}${goto 12}${color3}Fortune  ${hr 2}
-${color1}${execi 600 fortune -s | fold -s -w44}
+${color1}${execi 600 fortune -s | fold -s -w32}
 ${voffset 14}${goto 12}${color3}UPTIME: ${uptime}  ${hr 2}
 ]];
 
